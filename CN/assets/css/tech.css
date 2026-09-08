@@ -403,6 +403,18 @@ img { max-width: 100%; display: block; }
 html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
 html.js .reveal.in { opacity: 1; transform: translateY(0); }
 
+/* ---------- Live stats ---------- */
+.stats-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.stat { display: flex; flex-direction: column; gap: 6px; padding: 8px 2px; }
+.stat + .stat { border-left: 1px solid var(--border); padding-left: 18px; }
+.stat-label { font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.5px; font-size: .72rem; color: var(--muted); }
+.stat-value { font-family: var(--mono); font-size: 1.6rem; font-weight: 700; color: var(--text); }
+.stat-value.small { font-size: 1.05rem; color: var(--text-soft); }
+@media (max-width: 620px) {
+  .stats-card { grid-template-columns: 1fr; gap: 12px; }
+  .stat + .stat { border-left: 0; padding-left: 2px; border-top: 1px solid var(--border); padding-top: 12px; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 620px) {
   .t-item { padding-left: 8px; }
