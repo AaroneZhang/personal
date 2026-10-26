@@ -367,27 +367,28 @@ img { max-width: 100%; display: block; }
 .pub .title { font-weight: 600; margin-bottom: 4px; }
 .pub .cite { color: var(--muted); font-size: .86rem; line-height: 1.6; }
 
-/* Album */
+/* Album — auto-slides while idle, and can be dragged / swiped / wheeled manually */
 .album-track {
   display: flex;
-  gap: 14px;
   overflow-x: auto;
   padding: 6px 2px 16px;
-  scroll-snap-type: x mandatory;
   scrollbar-width: thin;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
 }
+.album-track.dragging { cursor: grabbing; }
 .album-track::-webkit-scrollbar { height: 8px; }
 .album-track::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
+.album-track a { flex: 0 0 auto; margin-right: 14px; }
 .album-track img {
   height: 180px;
   width: auto;
   border-radius: 14px;
   border: 1px solid var(--border);
-  scroll-snap-align: start;
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .album-track img:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.album-track a { flex: 0 0 auto; }
 
 /* Footer */
 .site-footer {
